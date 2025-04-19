@@ -54,8 +54,8 @@ const Navigation = () => {
     >
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 relative">
+          <Link href="/" className="flex items-center">
+            <div className="relative w-10 h-10 mr-2">
               <Image
                 src="/logo.png"
                 alt="Neurobot.ai Logo"
@@ -64,7 +64,7 @@ const Navigation = () => {
                 priority
               />
             </div>
-            <span className="text-2xl font-bold text-white">NEUROBOT</span>
+            <span className="text-2xl font-bold text-primary">Neurobot.ai</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
