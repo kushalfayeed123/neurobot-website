@@ -199,8 +199,8 @@ export default function Contact() {
             >
               <h3 className="text-xl font-bold mb-4">What brokers do you support?</h3>
               <p className="text-gray-300">
-                We support major forex brokers including MetaTrader 4/5, cTrader,
-                and other popular trading platforms through our API integration.
+                Currently, we support Deriv broker, with more major forex brokers
+                and trading platforms coming very soon through our API integration.
               </p>
             </MotionDiv>
             <MotionDiv
