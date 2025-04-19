@@ -29,8 +29,8 @@ export default function Home() {
               24/7 automation, backtested strategies, and real-time market analysis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">Start Trading</button>
-              <button className="btn-secondary">Request Demo</button>
+              <Link href="/coming-soon" className="btn-primary">Start Trading</Link>
+              <a href="https://wa.me/16013178091" target="_blank" rel="noopener noreferrer" className="btn-secondary">Request Demo</a>
             </div>
           </MotionDiv>
         </div>
@@ -125,7 +125,7 @@ export default function Home() {
                 <li>5 Trading Pairs</li>
                 <li>Email Support</li>
               </ul>
-              <button className="btn-primary w-full">Get Started</button>
+              <Link href="/coming-soon" className="block btn-primary w-full text-center">Get Started</Link>
             </MotionDiv>
             <MotionDiv
               whileHover={{ scale: 1.05 }}
@@ -139,7 +139,7 @@ export default function Home() {
                 <li>Priority Support</li>
                 <li>Custom Strategies</li>
               </ul>
-              <button className="btn-secondary w-full">Get Started</button>
+              <Link href="/coming-soon" className="block btn-primary w-full text-center">Get Started</Link>
             </MotionDiv>
             <MotionDiv
               whileHover={{ scale: 1.05 }}
@@ -154,7 +154,7 @@ export default function Home() {
                 <li>Custom Strategies</li>
                 <li>API Access</li>
               </ul>
-              <button className="btn-primary w-full">Get Started</button>
+              <Link href="/coming-soon" className="block btn-primary w-full text-center">Get Started</Link>
             </MotionDiv>
           </div>
         </div>

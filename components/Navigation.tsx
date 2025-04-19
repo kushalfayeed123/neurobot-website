@@ -9,6 +9,9 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // WhatsApp link
+  const whatsappLink = "https://wa.me/16013178091";
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -83,10 +86,10 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/demo" className="btn-secondary">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-secondary">
               Request Demo
-            </Link>
-            <Link href="/start" className="btn-primary">
+            </a>
+            <Link href="/coming-soon" className="btn-primary">
               Start Trading
             </Link>
           </div>
@@ -169,15 +172,17 @@ const Navigation = () => {
                   Terms
                 </Link>
                 <div className="pt-4 flex flex-col space-y-4">
-                  <Link 
-                    href="/demo" 
+                  <a 
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-secondary text-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Request Demo
-                  </Link>
+                  </a>
                   <Link 
-                    href="/start" 
+                    href="/coming-soon" 
                     className="btn-primary text-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
