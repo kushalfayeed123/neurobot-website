@@ -3,10 +3,12 @@
 import Navigation from '@/components/Navigation';
 import { MotionDiv } from '@/components/MotionWrapper';
 import Link from 'next/link';
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+       <Analytics/>
       <Navigation />
       
       {/* Hero Section */}
