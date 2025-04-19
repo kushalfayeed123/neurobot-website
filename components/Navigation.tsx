@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navigation = () => {
@@ -53,8 +54,17 @@ const Navigation = () => {
     >
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            Neurobot.ai
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="w-10 h-10 relative">
+              <Image
+                src="/logo.png"
+                alt="Neurobot.ai Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-2xl font-bold text-white">NEUROBOT</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
