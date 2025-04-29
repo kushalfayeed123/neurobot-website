@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,39 +17,43 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (isMobileMenuOpen && !target.closest('.mobile-menu') && !target.closest('.hamburger-button')) {
+      if (
+        isMobileMenuOpen &&
+        !target.closest(".mobile-menu") &&
+        !target.closest(".hamburger-button")
+      ) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMobileMenuOpen]);
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isMobileMenuOpen]);
 
   return (
     <motion.header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-dark-lighter/95 backdrop-blur-sm' : 'bg-transparent'
+        isScrolled ? "bg-dark-lighter/95 backdrop-blur-sm" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -74,28 +78,47 @@ const Navigation = () => {
             <Link href="/" className="hover:text-primary transition-colors">
               Home
             </Link>
-            <Link href="/about" className="hover:text-primary transition-colors">
+            <Link
+              href="/about"
+              className="hover:text-primary transition-colors"
+            >
               About
             </Link>
-            <Link href="/contact" className="hover:text-primary transition-colors">
+            <Link
+              href="/contact"
+              className="hover:text-primary transition-colors"
+            >
               Contact
             </Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">
+            <Link
+              href="/terms"
+              className="hover:text-primary transition-colors"
+            >
               Terms
             </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
               Request Demo
             </a>
-            <Link href="/coming-soon" className="btn-primary">
+            <a
+              href="https://neuro-bot-frontend.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
               Start Trading
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
-          <button 
+          <button
             className="md:hidden text-white hamburger-button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
@@ -143,36 +166,36 @@ const Navigation = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="container-custom py-8 flex flex-col space-y-6">
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   className="text-xl hover:text-primary transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
                 </Link>
-                <Link 
-                  href="/about" 
+                <Link
+                  href="/about"
                   className="text-xl hover:text-primary transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   About
                 </Link>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="text-xl hover:text-primary transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact
                 </Link>
-                <Link 
-                  href="/terms" 
+                <Link
+                  href="/terms"
                   className="text-xl hover:text-primary transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Terms
                 </Link>
                 <div className="pt-4 flex flex-col space-y-4">
-                  <a 
+                  <a
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -181,8 +204,8 @@ const Navigation = () => {
                   >
                     Request Demo
                   </a>
-                  <Link 
-                    href="/coming-soon" 
+                  <Link
+                    href="/coming-soon"
                     className="btn-primary text-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -198,4 +221,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation; 
+export default Navigation;
